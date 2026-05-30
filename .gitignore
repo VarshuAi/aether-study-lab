@@ -1,0 +1,14 @@
+# Local credentials
+.env
+
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Heavy downloaded study media assets
+src/assets/audio/*.mp3
+src/assets/audio/*.wav
+
+# OS Files
+.DS_Store
+Thumbs.db

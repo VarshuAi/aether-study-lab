@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "subject": "Physics",
+    "topic": "Electrostatics",
+    "question": "Two point charges q1 = +2 µC and q2 = -6 µC are placed at a distance of 10 cm in air. What is the electric potential energy of the system?",
+    "options": [
+      "-1.08 Joules",
+      "-0.54 Joules",
+      "+1.08 Joules",
+      "0 Joules"
+    ],
+    "answer": 0,
+    "explanation": "Potential energy U = k * q1 * q2 / r. Here k = 9 * 10^9 N m^2/C^2. q1 = 2 * 10^-6 C, q2 = -6 * 10^-6 C, and r = 0.1 m. Substituting gives U = (9 * 10^9 * 2 * 10^-6 * -6 * 10^-6) / 0.1 = -1.08 Joules."
+  },
+  {
+    "id": 2,
+    "subject": "Physics",
+    "topic": "Kinematics",
+    "question": "A projectile is fired at an angle of 45° with the horizontal with an initial velocity of 20 m/s. Neglecting air resistance, what is the maximum height achieved by the projectile? (Take g = 10 m/s^2)",
+    "options": [
+      "5 meters",
+      "10 meters",
+      "15 meters",
+      "20 meters"
+    ],
+    "answer": 1,
+    "explanation": "Maximum height H = (u^2 * sin^2(θ)) / 2g. Here u = 20 m/s, θ = 45°, and g = 10 m/s^2. sin(45°) = 1/√2. Therefore, H = (400 * 0.5) / 20 = 10 meters."
+  },
+  {
+    "id": 3,
+    "subject": "Physics",
+    "topic": "Magnetism",
+    "question": "A charged particle moves with velocity v in a uniform magnetic field B perpendicular to it. The path of the particle will be a:",
+    "options": [
+      "Parabola",
+      "Straight Line",
+      "Helix",
+      "Circle"
+    ],
+    "answer": 3,
+    "explanation": "When velocity is perpendicular to the magnetic field, the magnetic force acts as a centripetal force (F = qvB = mv^2/r), causing the particle to move in a uniform circular orbit."
+  },
+  {
+    "id": 4,
+    "subject": "Mathematics",
+    "topic": "Calculus",
+    "question": "Find the limit of (x^2 - 4) / (x - 2) as x approaches 2.",
+    "options": [
+      "2",
+      "4",
+      "undefined",
+      "0"
+    ],
+    "answer": 1,
+    "explanation": "Factoring the numerator: x^2 - 4 = (x - 2)(x + 2). Thus, (x^2 - 4) / (x - 2) simplifies to (x + 2) for x != 2. The limit as x approaches 2 is 2 + 2 = 4."
+  },
+  {
+    "id": 5,
+    "subject": "Mathematics",
+    "topic": "Probability",
+    "question": "Two standard six-sided dice are rolled. What is the probability that the sum of the numbers rolled is equal to 7?",
+    "options": [
+      "1 / 6",
+      "1 / 12",
+      "5 / 36",
+      "7 / 36"
+    ],
+    "answer": 0,
+    "explanation": "The total number of outcomes is 6 * 6 = 36. The outcomes that sum to 7 are: (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1) — a total of 6 favorable outcomes. The probability is 6 / 36 = 1 / 6."
+  },
+  {
+    "id": 6,
+    "subject": "Computer Science",
+    "topic": "Algorithms",
+    "question": "Which of the following sorting algorithms has a guaranteed worst-case time complexity of O(n log n)?",
+    "options": [
+      "Quick Sort",
+      "Bubble Sort",
+      "Merge Sort",
+      "Insertion Sort"
+    ],
+    "answer": 2,
+    "explanation": "Merge Sort splits the array in halves recursively (log n levels) and merges them in linear time (O(n) at each level), resulting in O(n log n) complexity in the best, average, and worst cases."
+  },
+  {
+    "id": 7,
+    "subject": "Computer Science",
+    "topic": "Data Structures",
+    "question": "What is the worst-case lookup time in a hash table with a poorly designed hash function that causes all keys to collide?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ],
+    "answer": 2,
+    "explanation": "If all keys collide, they will all map to the same bucket. In a standard chained hash table, this creates a linked list of size n, turning lookups into linear searches with O(n) complexity."
+  },
+  {
+    "id": 8,
+    "subject": "Physics",
+    "topic": "Optics",
+    "question": "An object is placed at a distance of 15 cm in front of a convex lens of focal length 10 cm. Where is the image formed?",
+    "options": [
+      "30 cm behind the lens",
+      "30 cm in front of the lens",
+      "15 cm behind the lens",
+      "6 cm behind the lens"
+    ],
+    "answer": 0,
+    "explanation": "Using lens formula: 1/f = 1/v - 1/u. u = -15 cm, f = +10 cm. 1/10 = 1/v - 1/(-15) => 1/10 = 1/v + 1/15 => 1/v = 1/10 - 1/15 = 1/30. Thus, v = +30 cm (real, inverted image formed 30 cm behind the lens)."
+  }
+]

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether - Ultimate Developer Studio & AI Physics Study Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Modern Typographies -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Load Local Monaco Editor (via CDN fallback for quick loading) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+
+  <!-- GLOBAL BACKGROUND RADIAL GLOWS -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- APPLICATION SHELL CONTAINER -->
+  <div class="app-container">
+    
+    <!-- LEFT GLASSMORPHIC NAVIGATION BAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">🔮</span>
+        <h1>AETHER</h1>
+        <span class="logo-sub">STUDIO LAB</span>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" id="nav-lab" data-tab="lab">
+          <span class="nav-icon">⚛️</span> Physics Visualizer
+        </button>
+        <button class="nav-item" id="nav-exam" data-tab="exam">
+          <span class="nav-icon">📝</span> Offline Exams
+        </button>
+        <button class="nav-item" id="nav-workspace" data-tab="workspace">
+          <span class="nav-icon">💻</span> Code Workspace
+        </button>
+        <button class="nav-item" id="nav-audio" data-tab="audio">
+          <span class="nav-icon">🎵</span> Lofi Deck
+        </button>
+        <button class="nav-item" id="nav-chat" data-tab="chat">
+          <span class="nav-icon">💬</span> Aether AI
+        </button>
+      </nav>
+
+      <!-- TAMAGOTCHI CARE STATS (EMBEDDED FOR EASY VIEWING) -->
+      <div class="sidebar-stats">
+        <div class="stat-header">PICO METRICS</div>
+        <div class="stat-row">
+          <label>⚡ ENERGY</label>
+          <div class="bar-outer"><div class="bar-inner energy" id="pico-energy" style="width: 85%;"></div></div>
+        </div>
+        <div class="stat-row">
+          <label>💖 AFFECT</label>
+          <div class="bar-outer"><div class="bar-inner affection" id="pico-affection" style="width: 70%;"></div></div>
+        </div>
+        <div class="stat-row">
+          <label>🎓 INTELLECT</label>
+          <div class="bar-outer"><div class="bar-inner intellect" id="pico-intellect" style="width: 45%;"></div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT WORKSPACE PANEL (CONTENT CHANGES BY TAB) -->
+    <main class="main-panel">
+      
+      <!-- TOP CONTROL & MONITORING HEADER -->
+      <header class="main-header">
+        <div class="header-left">
+          <h2 id="tab-title">Physics Visualizer Lab</h2>
+          <p id="tab-subtitle" class="text-muted">Interactive mechanical vector environments</p>
+        </div>
+
+        <div class="header-right">
+          <!-- Active Screen Scanner Status -->
+          <div class="active-task-bar">
+            <span class="pulse-dot"></span>
+            <span id="header-status-msg">Watching: Aether Studio</span>
+          </div>
+
+          <!-- Academic Performance Widgets -->
+          <div class="perf-stats">
+            <div class="stat-badge">
+              <span class="badge-label">Solved</span>
+              <span class="badge-val" id="stats-solved-count">0</span>
+            </div>
+            <div class="stat-badge">
+              <span class="badge-label">Streak</span>
+              <span class="badge-val">🔥 <span id="stats-streak">2</span> Days</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ACTIVE WORKSPACE TABS VIEWPORT -->
+      <section class="tab-viewport">
+
+        <!-- 1. PHYSICS VISUALIZER VIEW -->
+        <div class="tab-content active" id="tab-content-lab">
+          <div class="lab-layout">
+            <div class="lab-controls">
+              <h3>Simulation Controls</h3>
+              
+              <div class="sim-selector">
+                <button class="sim-btn active" id="btn-sim-kinematics">🎯 Projectile Trajectory</button>
+                <button class="sim-btn" id="btn-sim-fields">⚡ Electromagnetic Fields</button>
+                <button class="sim-btn" id="btn-sim-optics">🔍 Lens Ray-Tracer</button>
+              </div>
+
+              <!-- DYNAMIC PARAMETER PANEL (CHANGES BASED ON SELECTION) -->
+              <div class="param-panel" id="lab-param-panel">
+                <!-- Kinematics params -->
+                <div class="param-group" id="params-kinematics">
+                  <div class="slider-field">
+                    <label>Velocity: <span id="val-velocity">20</span> m/s</label>
+                    <input type="range" id="slider-velocity" min="5" max="40" value="20">
+                  </div>
+                  <div class="slider-field">
+                    <label>Angle: <span id="val-angle">45</span>°</label>
+                    <input type="range" id="slider-angle" min="10" max="85" value="45">
+                  </div>
+                  <div class="slider-field">
+                    <label>Gravity: <span id="val-gravity">9.8</span> m/s²</label>
+                    <input type="range" id="slider-gravity" min="2" max="25" value="9.8" step="0.1">
+                  </div>
+                </div>
+              </div>
+
+              <div class="lab-actions">
+                <button class="btn-primary" id="btn-sim-run">▶ RUN SIMULATION</button>
+                <button class="btn-secondary" id="btn-sim-reset">↺ RESET</button>
+              </div>
+
+              <!-- Simulation Physics Stats Card -->
+              <div class="physics-card">
+                <h4>Kinematics Analytics</h4>
+                <div class="card-row">
+                  <span>Flight Time:</span>
+                  <strong id="stat-time">0.00s</strong>
+                </div>
+                <div class="card-row">
+                  <span>Horizontal Range:</span>
+                  <strong id="stat-range">0.00m</strong>
+                </div>
+                <div class="card-row">
+                  <span>Max Height:</span>
+                  <strong id="stat-height">0.00m</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIMULATION RENDERING CANVAS -->
+            <div class="lab-canvas-container">
+              <canvas id="lab-canvas" width="680" height="480"></canvas>
+              <div class="canvas-grid-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. OFFLINE EXAM VIEW -->
+        <div class="tab-content" id="tab-content-exam">
+          <div class="exam-layout">
+            <div class="exam-dashboard" id="exam-dashboard">
+              <div class="exam-card">
+                <h3>🧪 Standard JEE Preparatory Challenge</h3>
+                <p class="text-muted">A pre-loaded question bank of Physics, Calculus, and Computer Science multiple choice tests.</p>
+                
+                <div class="dashboard-metrics">
+                  <div class="metric">
+                    <h4>8</h4>
+                    <span>Loaded Questions</span>
+                  </div>
+                  <div class="metric">
+                    <h4 id="exam-score-val">0 / 8</h4>
+                    <span>High Score</span>
+                  </div>
+                </div>
+
+                <button class="btn-primary" id="btn-start-exam">✏️ START MOCK EXAM</button>
+              </div>
+            </div>
+
+            <!-- ACTIVE QUESTION SCREEN (HIDDEN BY DEFAULT) -->
+            <div class="exam-active-test" id="exam-active-test" style="display: none;">
+              <div class="question-header">
+                <span class="subject-tag" id="exam-subject-tag">Physics</span>
+                <span class="topic-tag" id="exam-topic-tag">Electrostatics</span>
+                <span class="question-counter" id="exam-question-counter">Question 1 of 8</span>
+              </div>
+
+              <h2 class="question-body" id="exam-question-body">What is the electric potential energy of...</h2>
+
+              <div class="options-container" id="exam-options-container">
+                <!-- Dynamic options generated in JS -->
+              </div>
+
+              <!-- GRADED RESPONSE DETAILS -->
+              <div class="explanation-box" id="exam-explanation-box" style="display: none;">
+                <h4 id="explanation-title">✅ Correct!</h4>
+                <p id="explanation-text">The energy is calculated via...</p>
+              </div>
+
+              <div class="exam-actions">
+                <button class="btn-primary" id="btn-exam-next" style="display: none;">NEXT QUESTION ➔</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. CODE WORKSPACE VIEW -->
+        <div class="tab-content" id="tab-content-workspace">
+          <div class="workspace-layout">
+            <div class="editor-header">
+              <div class="editor-controls">
+                <span class="editor-title">✏️ offline_workspace.js</span>
+                <select id="editor-lang-select">
+                  <option value="javascript">JavaScript</option>
+                  <option value="python">Python</option>
+                  <option value="cpp">C++</option>
+                </select>
+              </div>
+              <div class="synth-toggle-field">
+                <label>⌨️ Mechanical Synthesizer: </label>
+                <input type="checkbox" id="chk-synth" checked>
+              </div>
+            </div>
+
+            <!-- MONACO MOUNT VIEW -->
+            <div class="monaco-container" id="monaco-mount"></div>
+          </div>
+        </div>
+
+        <!-- 4. LOFI AUDIO DECK VIEW -->
+        <div class="tab-content" id="tab-content-audio">
+          <div class="audio-layout">
+            <div class="deck-grid">
+              
+              <!-- MEDIA DOWNLOADER CARD -->
+              <div class="deck-card downloader-card">
+                <h3>🎵 Media Asset Center</h3>
+                <p class="text-muted">Project Aether scales your workspace by downloading public domain lofi and study loops directly to your hard drive.</p>
+                
+                <div class="download-status-box" id="dl-status-box">
+                  <div class="dl-progress-bar-outer">
+                    <div class="dl-progress-bar-inner" id="dl-progress" style="width: 0%;"></div>
+                  </div>
+                  <div class="dl-stats-row">
+                    <span id="dl-current-track">Tracks Status: Pending setup</span>
+                    <strong id="dl-percent">0%</strong>
+                  </div>
+                </div>
+
+                <button class="btn-primary" id="btn-trigger-download">⚡ DOWNLOAD AMBIANCE PACK (~25MB)</button>
+              </div>
+
+              <!-- LOFI AUDIO CONTROLLER -->
+              <div class="deck-card mixer-card">
+                <h3>🎛️ Ambient Mixing Board</h3>
+                <p class="text-muted">Mix offline audio loops to create your ultimate coding environment.</p>
+
+                <div class="mixer-channels">
+                  <!-- Channel 1: Rain Lofi -->
+                  <div class="mixer-channel">
+                    <div class="channel-details">
+                      <span>🌧️ Rain Lofi Loop</span>
+                      <strong class="channel-status" id="status-rain_lofi">Not Loaded</strong>
+                    </div>
+                    <div class="channel-controls">
+                      <button class="btn-play" id="btn-play-rain_lofi" disabled>▶</button>
+                      <input type="range" class="slider-volume" id="volume-rain_lofi" min="0" max="1" step="0.1" value="0.5">
+                    </div>
+                  </div>
+
+                  <!-- Channel 2: Synth Beats -->
+                  <div class="mixer-channel">
+                    <div class="channel-details">
+                      <span>🎧 Deep Synth Beats</span>
+                      <strong class="channel-status" id="status-synth_study">Not Loaded</strong>
+                    </div>
+                    <div class="channel-controls">
+                      <button class="btn-play" id="btn-play-synth_study" disabled>▶</button>
+                      <input type="range" class="slider-volume" id="volume-synth_study" min="0" max="1" step="0.1" value="0.5">
+                    </div>
+                  </div>
+
+                  <!-- Channel 3: Piano Loop -->
+                  <div class="mixer-channel">
+                    <div class="channel-details">
+                      <span>🎹 Mellow Study Piano</span>
+                      <strong class="channel-status" id="status-chill_piano">Not Loaded</strong>
+                    </div>
+                    <div class="channel-controls">
+                      <button class="btn-play" id="btn-play-chill_piano" disabled>▶</button>
+                      <input type="range" class="slider-volume" id="volume-chill_piano" min="0" max="1" step="0.1" value="0.5">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. AETHER AI COMPANION VIEW -->
+        <div class="tab-content" id="tab-content-chat">
+          <div class="chat-layout">
+            <div class="chat-viewport" id="chat-viewport">
+              <div class="chat-bubble model">
+                <p>Hello Varshan! Welcome to your Aether dashboard! Ready to visualise some classical mechanics or run some offline mocks? Let me know how I can assist! 🚀</p>
+              </div>
+            </div>
+
+            <div class="chat-input-row">
+              <button class="btn-mic" id="btn-chat-mic">🎙️</button>
+              <input type="text" class="chat-input" id="chat-text-input" placeholder="Ask Aether to open VS Code, start simulations, or discuss calculus...">
+              <button class="btn-primary" id="btn-chat-send">➔</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- LOAD APPLICATION WORKSPACE MODULES -->
+  <script src="components/lab.js"></script>
+  <script src="components/exam.js"></script>
+  <script src="components/workspace.js"></script>
+  <script src="components/audio.js"></script>
+  <script src="components/chat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

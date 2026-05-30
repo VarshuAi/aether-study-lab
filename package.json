@@ -1,0 +1,16 @@
+{
+  "name": "aether-study-lab",
+  "version": "1.0.0",
+  "description": "Ultimate Developer Studio & AI Physics Study Lab",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.11.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "electron": "^30.0.6"
+  }
+}
