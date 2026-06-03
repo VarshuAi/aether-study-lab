@@ -13,13 +13,13 @@
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira%20Code&weight=500&size=22&duration=3500&pause=800&color=00FF88&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%3E%20Welcome%20to%20aether-study-lab%20%F0%9F%9A%80;%3E%20Built%20using%20JavaScript%20%7C%20Optimized%20%26%20Secure;%3E%20Cyberpunk%20Premium%20Theme%20Applied.)](https://github.com/VarshuAi/aether-study-lab)
+<a href="https://github.com/VarshuAi/aether-study-lab"><img src="https://readme-typing-svg.demolab.com?font=Fira%20Code&weight=500&size=22&duration=3500&pause=800&color=00FF88&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=700&height=80&lines=%3E%20Welcome%20to%20aether-study-lab%20%F0%9F%9A%80;%3E%20Built%20using%20JavaScript%20%7C%20Optimized%20%26%20Secure;%3E%20Cyberpunk%20Premium%20Theme%20Applied." alt="Typing SVG"/></a>
 
 <br/>
 
-![Version](https://img.shields.io/badge/Version-1.0-00FF88?style=for-the-badge&logo=github&logoColor=black)
-![Language](https://img.shields.io/badge/JavaScript-Tech-00CC66?style=for-the-badge&logo=javascript&logoColor=black)
-![Status](https://img.shields.io/badge/Status-Active-14354C?style=for-the-badge&logo=git&logoColor=white)
+<img src="https://img.shields.io/badge/Version-1.0-00FF88?style=for-the-badge&logo=github&logoColor=black" alt="Version"/>
+<img src="https://img.shields.io/badge/JavaScript-Tech-00CC66?style=for-the-badge&logo=javascript&logoColor=black" alt="Language"/>
+<img src="https://img.shields.io/badge/Status-Active-14354C?style=for-the-badge&logo=git&logoColor=white" alt="Status"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:002211,100:000000&height=60&section=header&text=&fontSize=0" width="100%"/>
 
@@ -46,7 +46,7 @@ primary_tech: JavaScript
 
 <div align="center">
 <br>
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&repo=aether-study-lab&theme=react-dark&bg_color=000000&color=00FF88&line=00FF88&point=00CC66)](https://github.com/VarshuAi/aether-study-lab)
+<a href="https://github.com/VarshuAi/aether-study-lab"><img src="https://github-readme-activity-graph.vercel.app/graph?username=VarshuAi&repo=aether-study-lab&theme=react-dark&bg_color=000000&color=00FF88&line=00FF88&point=00CC66" alt="Activity Graph"/></a>
 <br>
 </div>
 
@@ -96,34 +96,14 @@ cd aether-study-lab
 <samp>&nbsp;SETUP</samp>
 </h2>
 
-### 📂 Directory Layout
-```
-├── package.json              # App configuration
-├── main.js                   # Node.js Electron main window
-├── preload.js                # Secure Context isolated IPC
-├── .env                      # Gemini API keys
-├── .gitignore                # Safely ignores key files & audio loops
-└── src/
-    ├── index.html            # Main SPA dashboard
-    ├── style.css             # HSL Neumorphic styling
-    ├── app.js                # Core frontend router
-    ├── assets/               # Local question databases & loops
-    └── components/           # Lab, Exam, Monaco, Mixer, and Chat modules
-```
+```bash
+# 1. Clone repository remote
+git clone https://github.com/VarshuAi/aether-study-lab.git
+cd aether-study-lab
 
-### 🚀 Launch Guide
-1. Install dependencies:
-   ```powershell
-   npm install
-   ```
-2. Configure credentials in a `.env` file:
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key_here
-   ```
-3. Run the application:
-   ```powershell
-   npm start
-   ```
+# 2. Check technical prerequsites
+# Ensure runtime matches requirements (JavaScript)
+```
 
 <!-- ============================== STRUCTURE ============================== -->
 
@@ -149,12 +129,12 @@ aether-study-lab/
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira%20Code&size=14&duration=4000&pause=1000&color=00FF88&center=true&vCenter=true&width=500&lines=Made+with+%E2%9D%A4%EF%B8%8F+by+VarshuAi;Build+Fast.+Ship+Secure.+Scale+Infinite.)](https://github.com/VarshuAi)
+<a href="https://github.com/VarshuAi"><img src="https://readme-typing-svg.demolab.com?font=Fira%20Code&size=14&duration=4000&pause=1000&color=00FF88&center=true&vCenter=true&width=500&lines=Made+with+%E2%9D%A4%EF%B8%8F+by+VarshuAi;Build+Fast.+Ship+Secure.+Scale+Infinite." alt="Typing SVG"/></a>
 
 <br/>
 
-[![GitHub](https://img.shields.io/badge/VarshuAi-Profile-00FF88?style=for-the-badge&logo=github&logoColor=black)](https://github.com/VarshuAi)
-[![Repo](https://img.shields.io/badge/aether-study-lab-Repo-00CC66?style=for-the-badge&logo=github&logoColor=black)](https://github.com/VarshuAi/aether-study-lab)
+<a href="https://github.com/VarshuAi"><img src="https://img.shields.io/badge/VarshuAi-Profile-00FF88?style=for-the-badge&logo=github&logoColor=black" alt="GitHub Profile"/></a>
+<a href="https://github.com/VarshuAi/aether-study-lab"><img src="https://img.shields.io/badge/aether-study-lab-Repo-00CC66?style=for-the-badge&logo=github&logoColor=black" alt="Repository"/></a>
 
 <br/>
 
