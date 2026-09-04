@@ -1,3 +1,4 @@
+<!-- VARSHUAI-REDESIGN-v2 -->
 # ⚡ Aether Study Lab
 
 > **A high-performance JavaScript utility engineered by VarshuAi.**  
